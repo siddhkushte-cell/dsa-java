@@ -68,7 +68,7 @@ public class LinkedList {
      * Appends a new element at the end of the list.
      *
      * <p>If the list is empty the new node becomes the head; otherwise the list
-     * is traversed to find the tail and the node is linked there. O(n) time.
+     * is traversed to find the tail and the node are linked there. O(n) time.
      *
      * @param val the integer value to append
      */
@@ -95,7 +95,7 @@ public class LinkedList {
      * Removes the first node whose {@code data} equals {@code key}.
      *
      * <p>If the head matches, the head pointer is advanced to the next node.
-     * Otherwise the list is traversed until the predecessor of the target node
+     * Otherwise, the list is traversed until the predecessor of the target node
      * is found and the target is unlinked. If {@code key} is not present the
      * list is unchanged.
      *
