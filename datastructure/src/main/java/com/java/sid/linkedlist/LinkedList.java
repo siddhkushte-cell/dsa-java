@@ -1,5 +1,7 @@
 package com.java.sid.linkedlist;
 
+import java.util.logging.Logger;
+
 /**
  * A singly linked list node holding an integer value.
  */
@@ -26,6 +28,9 @@ class Node
  */
 public class LinkedList {
 
+    private static final Logger LOGGER = Logger.getLogger(LinkedList.class.getName());
+    private static final String INSERT_MSG = "Inserting Element: ";
+
     /** The first node of the list, or {@code null} if the list is empty. */
     Node head;
 
@@ -47,6 +52,7 @@ public class LinkedList {
      * Prints each element of the list to standard output, one per line,
      * traversing from head to tail.
      */
+    @SuppressWarnings("java:S106")
     public void print()
     {
         Node temp = head;
@@ -151,26 +157,28 @@ public class LinkedList {
 
         LinkedList list = new LinkedList();
 
-        System.out.println("Inserting Element : "+10);
+        LOGGER.info(INSERT_MSG + 10);
         list.addFirst(10);
-        System.out.println("Inserting Element : "+20);
+        LOGGER.info(INSERT_MSG + 20);
         list.addFirst(20);
-        System.out.println("Inserting Element: "+30);
+        LOGGER.info(INSERT_MSG + 30);
         list.addFirst(30);
-        System.out.println("Inserting Element: "+40);
+        LOGGER.info(INSERT_MSG + 40);
         list.addFirst(40);
-        System.out.println("Inserting Element: "+30);
+        LOGGER.info(INSERT_MSG + 50);
         list.addLast(50);
-        System.out.println("Inserting Element: "+40);
+        LOGGER.info(INSERT_MSG + 60);
         list.addLast(60);
 
-        System.out.println("The LinkedList Elements Are [Before Deletion]:");
+        LOGGER.info("The LinkedList Elements Are [Before Deletion]:");
         list.print();
 
-        System.out.println("Deleting Element: "+30);
+        LOGGER.info("Deleting Element: 30");
         list.delete(30);
 
-        System.out.println("The LinkedList Elements Are [After Deletion]:");
+        LOGGER.info("The LinkedList Elements Are [After Deletion]:");
         list.print();
+
+        LOGGER.info(() -> "Searching for 20: " + list.search(20));
     }
 }
